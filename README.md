@@ -32,6 +32,16 @@ python tools/patch_langtool.py /path/to/original/langtool.exe \
   /path/to/game/langtool-expanded.exe
 ```
 
+Alternatively, with [uv](https://docs.astral.sh/uv/) installed:
+
+```sh
+uv run tools/patch_langtool.py /path/to/original/langtool.exe \
+  /path/to/game/langtool-expanded.exe
+```
+
+The patcher uses only Python's standard library, so `uv` does not need to
+install any project dependencies.
+
 The patcher checks the executable's SHA-256, size, and original instruction
 bytes. It creates a separate executable and refuses to overwrite an existing
 output file.
